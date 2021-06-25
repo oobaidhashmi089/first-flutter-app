@@ -9,20 +9,20 @@ class Home extends StatelessWidget {
               child: Center(
                   child: Text(
             "Hello Flutter",
-            style: TextStyle(color: Colors.black),
+            style: TextStyle(color: Colors.white),
           ))),
           shadowColor: Colors.grey,
         ),
+        //drawer: Drawer(),
         body: Center(
           child: SizedBox(
             child: Container(
               child: Center(
                 child: Text("Hello Iam Obaid",
                     style: TextStyle(
-                      color: Colors.redAccent,
+                      color: Colors.deepPurple,
                       fontWeight: FontWeight.bold,
-                      fontStyle: FontStyle.italic,
-                      fontSize: 30,
+                      fontSize: 20,
                     )),
               ),
             ),
