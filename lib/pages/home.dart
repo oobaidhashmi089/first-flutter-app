@@ -1,19 +1,20 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_application_ob/widgets/drawer.dart';
 
 class Home extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return (Scaffold(
         appBar: AppBar(
-          title: Center(
-              child: Center(
-                  child: Text(
-            "Hello Flutter",
-            style: TextStyle(color: Colors.white),
-          ))),
-          shadowColor: Colors.grey,
+            backgroundColor: Color(0xff310263),
+            title: Center(
+                child: Center(
+              child: Image.asset("asset/homepage.png"),
+              
+            ))),
+        drawer: Mdrawer(
+          
         ),
-        //drawer: Drawer(),
         body: Center(
           child: SizedBox(
             child: Container(
@@ -27,6 +28,11 @@ class Home extends StatelessWidget {
               ),
             ),
           ),
-        )));
+          
+        )
+         
+        )
+        
+        );
   }
 }
