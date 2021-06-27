@@ -25,23 +25,6 @@ class Home extends StatelessWidget {
                     // do something
                   }),
             ]),
-        // title: new Row(
-        //   mainAxisAlignment: MainAxisAlignment.end,
-        //   children: [
-        //     Text("*****",),
-        //     Container(
-
-        //         padding: const EdgeInsets.all(8.0),
-        //         child: Image.asset(
-        //           "images/add_shopping_cart_64px.png",
-        //           fit: BoxFit.contain,
-        //           height: 32,
-        //         ))
-        //   ],
-        // ),
-        // backgroundColor: Color(0xff310263),
-        //
-
         drawer: Mdrawer(),
         body: Center(
           child: SizedBox(
@@ -49,7 +32,7 @@ class Home extends StatelessWidget {
               child: Center(
                 child: Text("Hello Iam Obaid",
                     style: TextStyle(
-                      color: Colors.deepPurple,
+                      color: Colors.black,
                       fontWeight: FontWeight.bold,
                       fontSize: 20,
                     )),

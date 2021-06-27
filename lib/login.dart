@@ -27,46 +27,51 @@ class _LoginState extends State<Login> {
   @override
   Widget build(BuildContext context) {
     return Material(
-      color: Color(0xff310263),
+      color: Color(0xFF040007),
       child: Form(
         key: _formkey,
         child: Column(
           children: [
-            Center(
-              child: Center(
-                child: Image.asset(
-                  "asset/dev.png",
-                  fit: BoxFit.cover,
-                  height: 150,
-                  width: 600,
-                ),
-              ),
-            ),
+            // Title(
+            //   color: Colors.black,
+            //   child: Container(
+            //     alignment: Alignment(-1.0, 0),
+            //     child: Image.asset(
+            //       "asset/windows-store-icon.png",
+            //       fit: BoxFit.cover,
+            //       height: 80,
+            //       width: 100,
+            //     ),
+            //   ),
+            // ),
             SizedBox(
               height: 20.0,
             ),
-            Padding(
-              padding: const EdgeInsets.only(right: 250),
-              child: Container(
-                child: Image.asset(
-                  "asset/flutter_64px.png",
-                  height: 100,
-                  width: 100,
-                ),
-              ),
-            ),
+            // Padding(
+            //   padding: const EdgeInsets.only(right: 250),
+            //   child: Container(
+            //     child: Image.asset(
+            //       "asset/flutter_64px.png",
+            //       height: 100,
+            //       width: 100,
+            //     ),
+            //   ),
+            // ),
             Padding(
               padding: const EdgeInsets.only(bottom: 0),
               child: Column(
                 children: [
-                  Text(
-                    "Welcome",
-                    style: TextStyle(
-                      fontSize: 30,
-                      fontWeight: FontWeight.bold,
-                      color: Colors.white,
-                    ),
+                  Image.asset(
+                    "asset/windows-store-icon.png",
                   ),
+                  // Text(
+                  //   "Welcome",
+                  //   style: TextStyle(
+                  //     fontSize: 30,
+                  //     fontWeight: FontWeight.bold,
+                  //     color: Colors.white,
+                  //   ),
+                  // ),
                 ],
               ),
             ),
@@ -142,14 +147,14 @@ class _LoginState extends State<Login> {
                 ],
               ),
             ),
-            Container(
-              height: 40,
-              width: 200,
-              color: Color(0xff310263),
-              // child: Image.asset(
-              //   "asset/linkedin_circled_96px24235235.png",
-              // )
+            SizedBox(
+              height: 60,
             ),
+            Container(
+                height: 100,
+                width: 200,
+                color: Color(0xFF000000),
+                child: Image.asset("asset/workspace.png")),
           ],
         ),
       ),
