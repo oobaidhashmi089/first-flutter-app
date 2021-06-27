@@ -6,15 +6,12 @@ class Home extends StatelessWidget {
   Widget build(BuildContext context) {
     return (Scaffold(
         appBar: AppBar(
-            backgroundColor: Color(0xff310263),
+            // backgroundColor: Color(0xff310263),
             title: Center(
                 child: Center(
-              child: Image.asset("asset/homepage.png"),
-              
-            ))),
-        drawer: Mdrawer(
-          
-        ),
+          child: Image.asset("asset/home_page.png"),
+        ))),
+        drawer: Mdrawer(),
         body: Center(
           child: SizedBox(
             child: Container(
@@ -28,11 +25,6 @@ class Home extends StatelessWidget {
               ),
             ),
           ),
-          
-        )
-         
-        )
-        
-        );
+        )));
   }
 }

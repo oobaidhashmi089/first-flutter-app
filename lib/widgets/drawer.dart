@@ -7,7 +7,7 @@ class Mdrawer extends StatelessWidget {
   Widget build(BuildContext context) {
     return Drawer(
       child: Container(
-        color: Color(0xff310263),
+        color: Color(0xFF000000),
         child: Padding(
           padding: EdgeInsets.all(0),
           child: ListView(
@@ -18,7 +18,7 @@ class Mdrawer extends StatelessWidget {
                     child: Padding(
                   padding: EdgeInsets.all(2.0),
                   child: UserAccountsDrawerHeader(
-                    decoration: BoxDecoration(color: Color(0xff310263)),
+                    decoration: BoxDecoration(color: Color(0xFF000000)),
                     margin: EdgeInsets.zero,
                     accountName: Text(
                       "Syed Obaid Hashmi",

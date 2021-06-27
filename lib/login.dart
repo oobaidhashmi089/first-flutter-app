@@ -2,12 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:flutter_application_ob/utroutes/routes.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-class login extends StatefulWidget {
+class Login extends StatefulWidget {
   @override
-  _loginState createState() => _loginState();
+  _LoginState createState() => _LoginState();
 }
 
-class _loginState extends State<login> {
+class _LoginState extends State<Login> {
   bool changef = false;
   final _formkey = GlobalKey<FormState>();
   moveHome(BuildContext context) async {
