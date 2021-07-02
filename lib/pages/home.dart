@@ -1,15 +1,37 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_application_ob/model/catapp.dart';
 import 'package:flutter_application_ob/widgets/drawer.dart';
 import 'package:flutter_application_ob/widgets/items.dart';
+import 'dart:convert';
 
-class Home extends StatelessWidget {
+class Home extends StatefulWidget {
+  @override
+  _HomeState createState() => _HomeState();
+}
+
+class _HomeState extends State<Home> {
   get child => null;
 
   @override
+  void initState() {
+    super.initState();
+    dataload();
+  }
+
+  dataload() async {
+    final json = await rootBundle.loadString("asset/files/app.json");
+    final decodedData = jsonDecode(json);
+    var productsData = decodedData["products"];
+    Mitems.items = List.from(productsData)
+        .map<Items>((item) => Items.fromjson(item))
+        .toList();
+    setState(() {});
+  }
+
+  @override
   Widget build(BuildContext context) {
-    final dummy = List.generate(20, (index) => Mitems.items[0]);
     return (Scaffold(
       appBar: AppBar(
           title: Center(
@@ -32,9 +54,9 @@ class Home extends StatelessWidget {
       body: Padding(
         padding: const EdgeInsets.all(38.0),
         child: ListView.builder(
-          itemCount: dummy.length,
+          itemCount: Mitems.items.length,
           itemBuilder: (context, index) {
-            return ItemsWidgets(items: dummy[index]);
+            return ItemsWidgets(items: Mitems.items[index]);
           },
         ),
       ),

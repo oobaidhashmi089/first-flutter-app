@@ -1,0 +1,43 @@
+{
+
+"products":[ 
+    
+    
+ {
+   " id": 1,
+    "name": "Samsung Galaxy A32",
+    "desc": "In Stock",
+    "price": 20000,
+    "color": "",
+    "img":
+        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQkBQ56_o6ibXAFeA5T92Usn7Q1qZSjj24Z6Q&usqp=CAU"
+
+},
+
+{
+  " id": 2,
+    "name": "HUAWEI Mate X2",
+    "desc": "In Stock",
+    "price": 33000,
+    "color": "",
+    "img":"https://consumer-img.huawei.com/content/dam/huawei-cbg-site/en/mkt/plp/new-phones/product-list/p40-blue.png"
+
+},
+{
+  " id": 3,
+    "name": "Micro Max note1",
+    "desc": "In Stock",
+    "price": 25000,
+    "color": "",
+    "img":"https://micromaxinfo.com/pub/media/wysiwyg/images/note1b.png"
+
+
+}
+
+
+
+
+
+]
+
+}

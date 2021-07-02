@@ -9,10 +9,20 @@ class Items {
   final String img;
 
   Items({this.id, this.name, this.desc, this.price, this.color, this.img});
+  factory Items.fromjson(Map<String, dynamic> map) {
+    Items(
+      id: map["id"],
+      name: map["name"],
+      desc: map["desc"],
+      price: map["price"],
+      color: map["color"],
+      img: map["img"],
+    );
+  }
 }
 
 class Mitems {
-  static final items = [
+   static List<Items> items=[
     Items(
         id: 1,
         name: "Samsung Galaxy A32",
