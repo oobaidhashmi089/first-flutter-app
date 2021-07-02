@@ -21,11 +21,12 @@ class _HomeState extends State<Home> {
   }
 
   dataload() async {
+    await Future.delayed(Duration(seconds: 2));
     final json = await rootBundle.loadString("asset/files/app.json");
     final decodedData = jsonDecode(json);
     var productsData = decodedData["products"];
     Mitems.items = List.from(productsData)
-        .map<Items>((item) => Items.fromjson(item))
+        .map<Items>((item) => Items.fromMap(item))
         .toList();
     setState(() {});
   }
@@ -53,12 +54,18 @@ class _HomeState extends State<Home> {
       drawer: Mdrawer(),
       body: Padding(
         padding: const EdgeInsets.all(38.0),
-        child: ListView.builder(
-          itemCount: Mitems.items.length,
-          itemBuilder: (context, index) {
-            return ItemsWidgets(items: Mitems.items[index]);
-          },
-        ),
+        child: (Mitems.items != null && Mitems.items.isNotEmpty)
+            ? ListView.builder(
+                itemCount: Mitems.items.length,
+                itemBuilder: (context, index) {
+                  return ItemsWidgets(items: Mitems.items[index]);
+                },
+              )
+            : Center(
+                child: CircularProgressIndicator(
+                    valueColor:
+                        new AlwaysStoppedAnimation<Color>(Colors.black)),
+              ),
       ),
     ));
   }
