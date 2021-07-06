@@ -34,39 +34,49 @@ class _HomeState extends State<Home> {
   @override
   Widget build(BuildContext context) {
     return (Scaffold(
-      appBar: AppBar(
-          title: Center(
-              child: Image.asset(
-            'asset/windows_10_store.png',
-            height: 100,
-            width: 100,
-          )),
-          actions: <Widget>[
-            IconButton(
-                icon: Icon(
-                  CupertinoIcons.shopping_cart,
-                  color: Colors.black,
-                ),
-                onPressed: () {
-                  // do something
-                }),
-          ]),
-      drawer: Mdrawer(),
-      body: Padding(
-        padding: const EdgeInsets.all(38.0),
-        child: (Mitems.items != null && Mitems.items.isNotEmpty)
-            ? ListView.builder(
-                itemCount: Mitems.items.length,
-                itemBuilder: (context, index) {
-                  return ItemsWidgets(items: Mitems.items[index]);
-                },
-              )
-            : Center(
-                child: CircularProgressIndicator(
-                    valueColor:
-                        new AlwaysStoppedAnimation<Color>(Colors.black)),
-              ),
-      ),
-    ));
+        appBar: AppBar(
+            title: Center(
+                child: Image.asset(
+              'asset/windows_10_store.png',
+              height: 100,
+              width: 100,
+            )),
+            actions: <Widget>[
+              IconButton(
+                  icon: Icon(
+                    CupertinoIcons.shopping_cart,
+                    color: Colors.black,
+                  ),
+                  onPressed: () {
+                    // do something
+                  }),
+            ]),
+        drawer: Mdrawer(),
+        body: Padding(
+            padding: const EdgeInsets.all(38.0),
+            child: (Mitems.items != null && Mitems.items.isNotEmpty)
+                ? GridView.builder(
+                    gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                        crossAxisCount: 2,
+                        mainAxisSpacing: 15,
+                        crossAxisSpacing: 15),
+                    itemBuilder: (context, index) {
+                      var item = Mitems.items[index];
+
+                      return Card(
+                          shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(12)),
+                          child: Card(
+                              child: GridTile(
+                            child: Image.network(item.img),
+                            header: Text(item.name),
+                            footer: Text(item.price.toString()),
+                          )));
+                    })
+                : Center(
+                    child: CircularProgressIndicator(
+                        valueColor:
+                            new AlwaysStoppedAnimation<Color>(Colors.black)),
+                  ))));
   }
 }
